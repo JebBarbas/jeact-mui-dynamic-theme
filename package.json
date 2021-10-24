@@ -1,0 +1,45 @@
+{
+  "name": "@jeact/mui-dynamic-theme",
+  "version": "1.0.0",
+  "description": "Adds dynamism to the MUI theme, like dark-mode, theme togglers and more colors",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JebBarbas/jeact-mui-dynamic-theme.git"
+  },
+  "keywords": [
+    "jeact",
+    "mui",
+    "theme",
+    "darkmode",
+    "dark",
+    "mode"
+  ],
+  "author": "jebbarbas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JebBarbas/jeact-mui-dynamic-theme/issues"
+  },
+  "homepage": "https://github.com/JebBarbas/jeact-mui-dynamic-theme#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "eslint-plugin-react": "^7.26.1",
+    "standard-version": "^9.3.2",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@jeact/hooks": "^1.2.0",
+    "@mui/material": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}
