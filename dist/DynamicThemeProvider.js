@@ -39,12 +39,9 @@ var DynamicThemeProvider = function (props) {
         setLight: setLight,
         setDark: setDark
     };
-    return (<DynamicThemeContext.Provider value={value}>
-            <CssBaseline />
-            <ThemeProvider theme={theme}>
-                {props.children}
-            </ThemeProvider>
-        </DynamicThemeContext.Provider>);
+    return (React.createElement(DynamicThemeContext.Provider, { value: value },
+        React.createElement(CssBaseline, null),
+        React.createElement(ThemeProvider, { theme: theme }, props.children)));
 };
 export default DynamicThemeProvider;
-//# sourceMappingURL=DynamicThemeProvider.jsx.map
+//# sourceMappingURL=DynamicThemeProvider.js.map
