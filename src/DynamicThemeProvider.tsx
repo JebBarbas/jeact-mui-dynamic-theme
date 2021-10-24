@@ -64,8 +64,8 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
 
     return (
         <DynamicThemeContext.Provider value={value}>
-            <CssBaseline/>
             <ThemeProvider theme={theme}>
+                <CssBaseline/>
                 {props.children}
             </ThemeProvider>
         </DynamicThemeContext.Provider>
