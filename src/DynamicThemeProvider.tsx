@@ -46,7 +46,7 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
 
     const theme = createOverridedTheme(
         convertColorSchemeToPaletteMode(appColorScheme),
-        props.overrides,
+        props.paletteOverrides,
     )
 
     const setDefault = () => setAppColorScheme('default')

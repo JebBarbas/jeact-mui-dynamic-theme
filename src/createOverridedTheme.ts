@@ -1,48 +1,42 @@
 import { createTheme } from '@mui/material'
+import type { Theme, PaletteMode, ThemeOptions } from '@mui/material'
+import type { PaletteOverride } from './types'
 
-import type { Theme, ThemeOptions, PaletteMode } from '@mui/material'
+export default function createOverridedTheme(mode:PaletteMode, paletteOverrides?: PaletteOverride | PaletteOverride[]):Theme {
+    let overrider:ThemeOptions = {}
+    let colors:PaletteOverride = {}
 
-export default function createOverridedTheme(mode:PaletteMode, overrides?: ThemeOptions | ThemeOptions[]):Theme {
-    let finalOverrider:ThemeOptions = {}
+    if(paletteOverrides){
+        if(Array.isArray(paletteOverrides)){
+            paletteOverrides.forEach(paletteOverride => {
+                colors = {
+                    ...colors,
+                    ...paletteOverride
+                }
+            })
+        }
+        else{
+            colors = paletteOverrides           
+        }
 
-    if(Array.isArray(overrides)){
-        overrides.forEach(override => {
-            finalOverrider = {
-                ...finalOverrider,
-                ...override,
-
-                palette: {
-                    ...finalOverrider.palette,
-                    ...override.palette,
-                    mode: mode,
-                },
-
-                mixins: {
-                    ...finalOverrider.mixins,
-                    ...override.mixins
-                },
-
-                transitions: {
-                    ...finalOverrider.transitions,
-                    ...override.transitions
-                },
-
-                typography: {
-                    ...finalOverrider.typography,
-                    ...override.typography
-                },
-            }
-        })
-    }
-    else{
-        finalOverrider = {
-            ...overrides,
+        overrider = {
             palette: {
-                ...overrides?.palette,
-                mode: mode,
+                ...(colors.primary ? {primary: {main: colors.primary}} : undefined),
+                ...(colors.secondary ? {secondary: {main: colors.secondary}} : undefined),
+                ...(colors.success ? {success: {main: colors.success}} : undefined),
+                ...(colors.error ? {error: {main: colors.error}} : undefined),
+                ...(colors.warning ? {warning: {main: colors.warning}} : undefined),
+                ...(colors.info ? {info: {main: colors.info}} : undefined)
             }
         }
     }
 
-    return createTheme(finalOverrider)
+    overrider = {
+        palette: {
+            ...overrider.palette,
+            mode: mode
+        }
+    }
+
+    return createTheme(overrider)
 }

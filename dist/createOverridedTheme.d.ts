@@ -1,2 +1,3 @@
-import type { Theme, ThemeOptions, PaletteMode } from '@mui/material';
-export default function createOverridedTheme(mode: PaletteMode, overrides?: ThemeOptions | ThemeOptions[]): Theme;
+import type { Theme, PaletteMode } from '@mui/material';
+import type { PaletteOverride } from './types';
+export default function createOverridedTheme(mode: PaletteMode, paletteOverrides?: PaletteOverride | PaletteOverride[]): Theme;

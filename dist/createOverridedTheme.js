@@ -10,16 +10,25 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { createTheme } from '@mui/material';
-export default function createOverridedTheme(mode, overrides) {
-    var finalOverrider = {};
-    if (Array.isArray(overrides)) {
-        overrides.forEach(function (override) {
-            finalOverrider = __assign(__assign(__assign({}, finalOverrider), override), { palette: __assign(__assign(__assign({}, finalOverrider.palette), override.palette), { mode: mode }), mixins: __assign(__assign({}, finalOverrider.mixins), override.mixins), transitions: __assign(__assign({}, finalOverrider.transitions), override.transitions), typography: __assign(__assign({}, finalOverrider.typography), override.typography) });
-        });
+export default function createOverridedTheme(mode, paletteOverrides) {
+    var overrider = {};
+    var colors = {};
+    if (paletteOverrides) {
+        if (Array.isArray(paletteOverrides)) {
+            paletteOverrides.forEach(function (paletteOverride) {
+                colors = __assign(__assign({}, colors), paletteOverride);
+            });
+        }
+        else {
+            colors = paletteOverrides;
+        }
+        overrider = {
+            palette: __assign(__assign(__assign(__assign(__assign(__assign({}, (colors.primary ? { primary: { main: colors.primary } } : undefined)), (colors.secondary ? { secondary: { main: colors.secondary } } : undefined)), (colors.success ? { success: { main: colors.success } } : undefined)), (colors.error ? { error: { main: colors.error } } : undefined)), (colors.warning ? { warning: { main: colors.warning } } : undefined)), (colors.info ? { info: { main: colors.info } } : undefined))
+        };
     }
-    else {
-        finalOverrider = __assign(__assign({}, overrides), { palette: __assign(__assign({}, overrides === null || overrides === void 0 ? void 0 : overrides.palette), { mode: mode }) });
-    }
-    return createTheme(finalOverrider);
+    overrider = {
+        palette: __assign(__assign({}, overrider.palette), { mode: mode })
+    };
+    return createTheme(overrider);
 }
 //# sourceMappingURL=createOverridedTheme.js.map

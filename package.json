@@ -37,6 +37,7 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@jeact/colors": "^1.1.1",
     "@jeact/hooks": "^1.2.0",
     "@mui/material": "^5.0.4"
   },

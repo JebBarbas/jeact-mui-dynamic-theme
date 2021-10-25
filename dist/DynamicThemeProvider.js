@@ -27,7 +27,7 @@ var DynamicThemeProvider = function (props) {
             return 'light';
         }
     };
-    var theme = createOverridedTheme(convertColorSchemeToPaletteMode(appColorScheme), props.overrides);
+    var theme = createOverridedTheme(convertColorSchemeToPaletteMode(appColorScheme), props.paletteOverrides);
     var setDefault = function () { return setAppColorScheme('default'); };
     var setLight = function () { return setAppColorScheme('light'); };
     var setDark = function () { return setAppColorScheme('dark'); };
