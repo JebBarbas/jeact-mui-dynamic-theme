@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.0](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.0.2-alpha.2...v1.1.0-alpha.0) (2021-10-25)
+
+
+### Features
+
+* Added paletteOverride option and default paletteOverrides 🎨 ([522309b](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/522309b00ebb88365979301e190fd0db63b5150b))
+
 ### [1.0.2-alpha.2](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.0.2-alpha.1...v1.0.2-alpha.2) (2021-10-24)
 
 

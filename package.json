@@ -1,12 +1,14 @@
 {
   "name": "@jeact/mui-dynamic-theme",
-  "version": "1.0.2-alpha.2",
+  "version": "1.1.0-alpha.0",
   "description": "Adds dynamism to the MUI theme, like dark-mode, theme togglers and more colors",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
     "share": "git push --follow-tags origin main && npm publish --access public",
+    "alpha": "standard-version --prerelease alpha",
+    "share-alpha": "git push --follow-tags origin main && npm publish --tag alpha --access public",
     "build": "tsc"
   },
   "repository": {
