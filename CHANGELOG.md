@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.2](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0-alpha.1...v1.1.0-alpha.2) (2021-11-01)
+
+
+### Bug Fixes
+
+* Trying to fix that new colors are not added to Typescript 🔧 ([2e94952](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/2e94952e6d61c266b1f09e979c726de6a73945df))
+
 ## [1.1.0-alpha.1](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0-alpha.0...v1.1.0-alpha.1) (2021-11-01)
 
 
