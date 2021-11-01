@@ -2,7 +2,7 @@ import type { ThemeOptions } from '@mui/material'
 
 export type ColorScheme = 'light' | 'dark' | 'default'
 
-export interface CustomColorsOptions {
+/*export interface CustomColorsOptions {
     custom0?: string
     custom1?: string
     custom2?: string
@@ -19,10 +19,10 @@ export interface CustomColorsOptions {
     customD?: string
     customE?: string
     customF?: string
-}
+}*/
 
 export interface DynamicThemeProviderProps {
     localStorageKey?: string
     overrides?: ThemeOptions | ThemeOptions[]
-    customColors?: CustomColorsOptions
+    /*customColors?: CustomColorsOptions*/
 }

@@ -1,20 +1,20 @@
 import type { Theme, PaletteMode, ThemeOptions } from '@mui/material'
-import type { CustomColorsOptions } from '../types'
+//import type { CustomColorsOptions } from '../types'
 
 import { createTheme } from '@mui/material'
 import { deepmerge } from '@mui/utils'
 
-import createCustomPalette from './createCustomPalette'
-import base from '../customColors/base'
+//import createCustomPalette from './createCustomPalette'
+//import base from '../customColors/base'
 
 export default function createOverridedTheme(
     mode:PaletteMode, 
     overrides?: ThemeOptions | ThemeOptions[],
-    customColors?: CustomColorsOptions
+    /*customColors?: CustomColorsOptions*/
 ):Theme {
     let overrider:ThemeOptions = {}
-    const customPalette = createCustomPalette(deepmerge(base, customColors))
-    const fillMode:ThemeOptions = {palette: {mode: mode, ...customPalette}}
+    //const customPalette = createCustomPalette(deepmerge(base, customColors))
+    const fillMode:ThemeOptions = {palette: {mode: mode, /*...customPalette*/}}
 
     if(overrides){
         if(Array.isArray(overrides)){

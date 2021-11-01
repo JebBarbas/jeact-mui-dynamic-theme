@@ -1,22 +1,12 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
+//import type { CustomColorsOptions } from '../types'
 import { createTheme } from '@mui/material';
 import { deepmerge } from '@mui/utils';
-import createCustomPalette from './createCustomPalette';
-import base from '../customColors/base';
-export default function createOverridedTheme(mode, overrides, customColors) {
+//import createCustomPalette from './createCustomPalette'
+//import base from '../customColors/base'
+export default function createOverridedTheme(mode, overrides) {
     var overrider = {};
-    var customPalette = createCustomPalette(deepmerge(base, customColors));
-    var fillMode = { palette: __assign({ mode: mode }, customPalette) };
+    //const customPalette = createCustomPalette(deepmerge(base, customColors))
+    var fillMode = { palette: { mode: mode, /*...customPalette*/ } };
     if (overrides) {
         if (Array.isArray(overrides)) {
             overrides.forEach(function (override) {

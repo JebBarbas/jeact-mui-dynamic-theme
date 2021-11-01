@@ -3,7 +3,7 @@ import useDynamicTheme from "./useDynamicTheme";
 
 import createOverridedTheme from './utils/createOverridedTheme';
 import createPaletteOverride from "./utils/createPaletteOverride";
-import createCustomPalette from "./utils/createCustomPalette";
+//import createCustomPalette from "./utils/createCustomPalette";
 
 import {
     bootstrapOverride,
@@ -14,7 +14,7 @@ import {
 export type {
     ColorScheme,
     DynamicThemeProviderProps,
-    CustomColorsOptions,
+    /*CustomColorsOptions,*/
 } from './types'
 
 export {
@@ -23,7 +23,7 @@ export {
 
     createOverridedTheme,
     createPaletteOverride,
-    createCustomPalette,
+    /*createCustomPalette,*/
 
     bootstrapOverride,
     muiDarkmodeOverride,

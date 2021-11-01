@@ -1,3 +1,4 @@
+/* This was from failed try to create custom colors
 import type { CustomColorsOptions } from '../types'
 
 const black = '#000000'
@@ -62,3 +63,4 @@ const base:CustomColorsOptions = {
 }
 
 export default base
+*/
