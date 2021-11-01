@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0...v1.1.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* Added README, and now createPaletteOverride has optional parameters 🥳 ([108bcb4](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/108bcb41ccb604d094509f4d86e8b65ba30dba40))
+
 ## [1.1.0](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0-alpha.2...v1.1.0) (2021-11-01)
 
 
