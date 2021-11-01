@@ -1,4 +1,4 @@
-import type { PaletteOptions } from '@mui/material'
+import type { CustomColorsOptions } from '../types'
 
 const black = '#000000'
 
@@ -42,23 +42,23 @@ declare module '@mui/material/styles' {
     }
 }
 
-const base:PaletteOptions = {
-    custom0: {main: black},
-    custom1: {main: black},
-    custom2: {main: black},
-    custom3: {main: black},
-    custom4: {main: black},
-    custom5: {main: black},
-    custom6: {main: black},
-    custom7: {main: black},
-    custom8: {main: black},
-    custom9: {main: black},
-    customA: {main: black},
-    customB: {main: black},
-    customC: {main: black},
-    customD: {main: black},
-    customE: {main: black},
-    customF: {main: black},
+const base:CustomColorsOptions = {
+    custom0: black,
+    custom1: black,
+    custom2: black,
+    custom3: black,
+    custom4: black,
+    custom5: black,
+    custom6: black,
+    custom7: black,
+    custom8: black,
+    custom9: black,
+    customA: black,
+    customB: black,
+    customC: black,
+    customD: black,
+    customE: black,
+    customF: black,
 }
 
 export default base

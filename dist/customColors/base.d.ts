@@ -1,4 +1,4 @@
-import type { PaletteOptions } from '@mui/material';
+import type { CustomColorsOptions } from '../types';
 declare module '@mui/material/styles' {
     interface Palette {
         custom0: Palette['primary'];
@@ -37,5 +37,5 @@ declare module '@mui/material/styles' {
         customF?: PaletteOptions['primary'];
     }
 }
-declare const base: PaletteOptions;
+declare const base: CustomColorsOptions;
 export default base;

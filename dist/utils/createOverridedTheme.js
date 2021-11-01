@@ -12,9 +12,10 @@ var __assign = (this && this.__assign) || function () {
 import { createTheme } from '@mui/material';
 import { deepmerge } from '@mui/utils';
 import createCustomPalette from './createCustomPalette';
+import base from '../customColors/base';
 export default function createOverridedTheme(mode, overrides, customColors) {
     var overrider = {};
-    var customPalette = customColors ? createCustomPalette(customColors) : {};
+    var customPalette = createCustomPalette(deepmerge(base, customColors));
     var fillMode = { palette: __assign({ mode: mode }, customPalette) };
     if (overrides) {
         if (Array.isArray(overrides)) {
