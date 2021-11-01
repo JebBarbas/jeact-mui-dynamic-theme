@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.1](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0-alpha.0...v1.1.0-alpha.1) (2021-11-01)
+
+
+### Features
+
+* Added custom colors to theme and how to change them 🎨 ([e6a82e6](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/e6a82e6729e59f99cb23be73b30000bb8fddc97c))
+
 ## [1.1.0-alpha.0](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.0.2-alpha.2...v1.1.0-alpha.0) (2021-10-25)
 
 
