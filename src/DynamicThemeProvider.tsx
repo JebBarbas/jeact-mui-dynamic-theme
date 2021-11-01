@@ -6,10 +6,10 @@ import {
 } from '@mui/material'
 
 import { useLocalStorage } from '@jeact/hooks' // Very useful hook :)
-import createOverridedTheme from './createOverridedTheme'
+import createOverridedTheme from './utils/createOverridedTheme'
 
 // Types
-import type { ColorScheme, DynamicThemeProviderProps, NewPaletteColors } from './types'
+import type { ColorScheme, DynamicThemeProviderProps } from './types'
 import type { PaletteMode } from '@mui/material'
 
 
@@ -46,7 +46,8 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
 
     const theme = createOverridedTheme(
         convertColorSchemeToPaletteMode(appColorScheme),
-        props.paletteOverrides,
+        props.overrides,
+        props.customColors
     )
 
     const setDefault = () => setAppColorScheme('default')

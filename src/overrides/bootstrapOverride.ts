@@ -1,5 +1,5 @@
-import type { PaletteOverride } from '../types'
 import { Bootstrap } from '@jeact/colors'
+import createPaletteOverride from '../utils/createPaletteOverride'
 
 const {
     primary, 
@@ -13,13 +13,8 @@ const {
 /**
  * Override the MUI default colors with the Bootstrap theme colors.
  */
-const bootstrapOverride:PaletteOverride = {
-    primary,
-    secondary,
-    error: danger,
-    info,
-    success,
-    warning
-}
+const bootstrapOverride = createPaletteOverride(
+    primary, secondary, success, warning, danger, info
+)
 
 export default bootstrapOverride

@@ -1,15 +1,25 @@
+import type { ThemeOptions } from '@mui/material';
 export declare type ColorScheme = 'light' | 'dark' | 'default';
-export declare type NewPaletteColors = Record<string, string>;
-export interface PaletteOverride {
-    primary?: string;
-    secondary?: string;
-    error?: string;
-    info?: string;
-    success?: string;
-    warning?: string;
+export interface CustomColorsOptions {
+    custom0?: string;
+    custom1?: string;
+    custom2?: string;
+    custom3?: string;
+    custom4?: string;
+    custom5?: string;
+    custom6?: string;
+    custom7?: string;
+    custom8?: string;
+    custom9?: string;
+    customA?: string;
+    customB?: string;
+    customC?: string;
+    customD?: string;
+    customE?: string;
+    customF?: string;
 }
 export interface DynamicThemeProviderProps {
     localStorageKey?: string;
-    paletteOverrides?: PaletteOverride | PaletteOverride[];
-    addedColors?: NewPaletteColors | NewPaletteColors[];
+    overrides?: ThemeOptions | ThemeOptions[];
+    customColors?: CustomColorsOptions;
 }

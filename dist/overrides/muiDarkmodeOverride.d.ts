@@ -1,6 +1,5 @@
-import type { PaletteOverride } from '../types';
 /**
  * Use this override to use always the dark theme colors
  */
-declare const muiDarkmodeOverride: PaletteOverride;
+declare const muiDarkmodeOverride: import("@mui/material").ThemeOptions;
 export default muiDarkmodeOverride;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
 import { useLocalStorage } from '@jeact/hooks'; // Very useful hook :)
-import createOverridedTheme from './createOverridedTheme';
+import createOverridedTheme from './utils/createOverridedTheme';
 // Context Creation
 export var contextDefaultValue = {
     appColorScheme: 'default',
@@ -27,7 +27,7 @@ var DynamicThemeProvider = function (props) {
             return 'light';
         }
     };
-    var theme = createOverridedTheme(convertColorSchemeToPaletteMode(appColorScheme), props.paletteOverrides);
+    var theme = createOverridedTheme(convertColorSchemeToPaletteMode(appColorScheme), props.overrides, props.customColors);
     var setDefault = function () { return setAppColorScheme('default'); };
     var setLight = function () { return setAppColorScheme('light'); };
     var setDark = function () { return setAppColorScheme('dark'); };
