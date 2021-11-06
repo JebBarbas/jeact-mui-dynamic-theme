@@ -7,10 +7,12 @@ import {
     deepmergeOverrides,
     extractColorFromMUIColorObject,
     newPaletteToThemeOptions,
+    changeCssSelection,
 } from './utils'
 
 import {
     bootstrapPalette,
+    muiPalette,
 } from './palettes'
 
 export type {
@@ -18,7 +20,7 @@ export type {
     DynamicThemeProviderProps,
     MUIColorObject,
     MUIColorObjectKey,
-    NewPalette
+    NewPalette,
 } from './types'
 
 export {
@@ -30,6 +32,8 @@ export {
     deepmergeOverrides,
     extractColorFromMUIColorObject,
     newPaletteToThemeOptions,
+    changeCssSelection,
 
     bootstrapPalette,
+    muiPalette,
 }

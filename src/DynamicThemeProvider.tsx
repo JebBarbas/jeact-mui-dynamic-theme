@@ -8,6 +8,9 @@ import {
 import { useLocalStorage } from '@jeact/hooks' // Very useful hook :)
 import createOverridedTheme from './utils/createOverridedTheme'
 
+// Import CSS to change the Selection color
+import './DynamicThemeProvider.css'
+
 // Types
 import type { ColorScheme, DynamicThemeProviderProps } from './types'
 import type { PaletteMode } from '@mui/material'
@@ -48,7 +51,9 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
         props.overrides,
         props.newPalettes,
         props.lightShade,
-        props.darkShade
+        props.darkShade,
+        props.selectionShade,
+        props.localization
     )
 
     const setDefault = () => setAppColorScheme('default')

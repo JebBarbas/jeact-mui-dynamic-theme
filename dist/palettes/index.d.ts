@@ -1,2 +1,3 @@
 import bootstrapPalette from "./bootstrapPalette";
-export { bootstrapPalette, };
+import muiPalette from "./muiPalette";
+export { bootstrapPalette, muiPalette, };

@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@jeact/colors": "^1.1.1",
+    "@jeact/contrast-color": "^1.1.0",
     "@jeact/hooks": "^1.2.0",
     "@mui/material": "^5.0.4"
   },

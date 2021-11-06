@@ -139,5 +139,33 @@ const App = () => {
 }
 ```
 
-***NOTE: Be aware of put the bootstrapPalette first, otherwise, the bootstrap primary color will override
-your pink primary color.***
+***NOTE: Be aware of put the bootstrapPalette first, otherwise, the bootstrap primary color will override your pink primary color.***
+
+***NOTE: If you change the primary color, you will see that when you select text, the selection color will change too.***
+
+There are 3 props that works with the `newPalettes` prop, these are: `lightShade`,`darkShade` and `selectionShade`,
+this props are the shades of the color used to create the theme (selectionShade is the shade of when you select 
+text).
+
+## Change Localization
+
+To change the localization (this includes the language of some MUI components) you only have to import the
+MUI localization object and put it in the `localization` prop.
+
+```jsx
+import { DynamicThemeProvider } from '@jeact/mui-dynamic-theme'
+import { esES } from '@mui/material/locale'
+
+// TODO: Create some screen that uses MUI components
+import Screen from './Screen'
+
+const App = () => {
+    return (
+        <DynamicThemeProvider localization={esES}>
+            <Screen>
+        </DynamicThemeProvider>
+    )
+}
+```
+
+You can see suported localizations [here](https://mui.com/guides/localization/).

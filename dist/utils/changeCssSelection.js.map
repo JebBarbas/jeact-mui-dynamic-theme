@@ -1,0 +1,1 @@
+{"version":3,"file":"changeCssSelection.js","sourceRoot":"","sources":["../../src/utils/changeCssSelection.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,kBAAkB,CAAC,EAAS,EAAE,EAAS;IAC3D,IAAM,IAAI,GAAG,QAAQ,CAAC,eAAe,CAAA;IACrC,IAAI,CAAC,KAAK,CAAC,WAAW,CAAC,WAAW,EAAE,EAAE,CAAC,CAAA;IACvC,IAAI,CAAC,KAAK,CAAC,WAAW,CAAC,WAAW,EAAE,EAAE,CAAC,CAAA;AAC3C,CAAC"}

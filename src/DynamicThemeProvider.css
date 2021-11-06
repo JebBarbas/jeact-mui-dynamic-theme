@@ -1,0 +1,10 @@
+/* Used to change the selection color */
+:root {
+    --jmdt-bg: #2196f3
+    --jmdt-fg: #ffffff;
+}
+
+*::selection {
+    background: var(--jmdt-bg);
+    color: var(--jmdt-fg);
+}

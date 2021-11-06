@@ -8,7 +8,7 @@ export default function extractColorFromMUIColorObject(
     darkShade?:MUIColorObjectKey,
 ):PaletteColorOptions{
     const light = lightShade ?? 600
-    const dark = darkShade ?? 200
+    const dark = darkShade ?? 300
     
     return {
         main: (mode == 'dark' ? colorObject[dark] : colorObject[light])

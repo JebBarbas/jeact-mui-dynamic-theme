@@ -1,15 +1,15 @@
 import { MaterialUI } from '@jeact/colors';
-var blue = MaterialUI.blue, grey = MaterialUI.grey, red = MaterialUI.red, cyan = MaterialUI.cyan, green = MaterialUI.green, yellow = MaterialUI.yellow;
+var blue = MaterialUI.blue, grey = MaterialUI.grey, red = MaterialUI.red, cyan = MaterialUI.cyan, green = MaterialUI.green, amber = MaterialUI.amber;
 /**
  * Override the MUI default colors with the Bootstrap theme colors.
  */
-var bootstrapOverride = {
+var bootstrapPalette = {
     primary: blue,
     secondary: grey,
     error: red,
     info: cyan,
     success: green,
-    warning: yellow
+    warning: amber
 };
-export default bootstrapOverride;
+export default bootstrapPalette;
 //# sourceMappingURL=bootstrapPalette.js.map

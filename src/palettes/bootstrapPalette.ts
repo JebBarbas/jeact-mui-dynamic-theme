@@ -7,19 +7,19 @@ const {
     red, 
     cyan,
     green,
-    yellow
+    amber
 } = MaterialUI
 
 /**
  * Override the MUI default colors with the Bootstrap theme colors.
  */
-const bootstrapOverride:NewPalette = {
+const bootstrapPalette:NewPalette = {
     primary: blue,
     secondary: grey,
     error: red,
     info: cyan,
     success: green,
-    warning: yellow
+    warning: amber
 }
 
-export default bootstrapOverride
+export default bootstrapPalette

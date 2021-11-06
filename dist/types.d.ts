@@ -1,4 +1,5 @@
 import type { ThemeOptions } from '@mui/material';
+import type { Localization } from '@mui/material/locale';
 export declare type ColorScheme = 'light' | 'dark' | 'default';
 export interface MUIColorObject {
     50: string;
@@ -31,4 +32,6 @@ export interface DynamicThemeProviderProps {
     newPalettes?: NewPalette | NewPalette[];
     lightShade?: MUIColorObjectKey;
     darkShade?: MUIColorObjectKey;
+    selectionShade?: MUIColorObjectKey;
+    localization?: Localization;
 }
