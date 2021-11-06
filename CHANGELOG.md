@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.0](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.1...v2.0.0-alpha.0) (2021-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Changed the form to override colors and now colors follow Material UI Guidelines 🎨🚀
+
+### Features
+
+* Changed the form to override colors and now colors follow Material UI Guidelines 🎨🚀 ([da1e5c9](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/da1e5c9002944185be3efb174e0e9b9c50919858))
+
 ### [1.1.1](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.0...v1.1.1) (2021-11-01)
 
 
