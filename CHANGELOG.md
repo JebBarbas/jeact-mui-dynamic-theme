@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.1](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-11-06)
+
+
+### Bug Fixes
+
+* Edited some colors and now selection text works 🍓 ([6684c9d](https://github.com/JebBarbas/jeact-mui-dynamic-theme/commit/6684c9d2a7ff75c1c2fdb535ae5f091bf716eb62))
+
 ## [2.0.0-alpha.0](https://github.com/JebBarbas/jeact-mui-dynamic-theme/compare/v1.1.1...v2.0.0-alpha.0) (2021-11-06)
 
 
