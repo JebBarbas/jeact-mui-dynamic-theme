@@ -1,32 +1,32 @@
 import type { Theme, PaletteMode, ThemeOptions } from '@mui/material'
-//import type { CustomColorsOptions } from '../types'
+import type { NewPalette, MUIColorObjectKey } from '../types'
 
 import { createTheme } from '@mui/material'
 import { deepmerge } from '@mui/utils'
 
-//import createCustomPalette from './createCustomPalette'
-//import base from '../customColors/base'
+import deepmergeOverrides from './deepmergeOverrides'
+import deepmergeNewPalettes from './deepmergeNewPalettes'
+import newPaletteToThemeOptions from './newPaletteToThemeOptions'
 
 export default function createOverridedTheme(
     mode:PaletteMode, 
     overrides?: ThemeOptions | ThemeOptions[],
-    /*customColors?: CustomColorsOptions*/
+    newPalettes?: NewPalette | NewPalette[],
+    lightShade?: MUIColorObjectKey,
+    darkShade?: MUIColorObjectKey
 ):Theme {
-    let overrider:ThemeOptions = {}
-    //const customPalette = createCustomPalette(deepmerge(base, customColors))
-    const fillMode:ThemeOptions = {palette: {mode: mode, /*...customPalette*/}}
+    // Merges all the overrides in one, that makes the overrider
+    const themeOptionsOverrided = deepmergeOverrides(overrides)
 
-    if(overrides){
-        if(Array.isArray(overrides)){
-            overrides.forEach(override => {
-                overrider = deepmerge(overrider, override)
-            })
-        }
-        else{
-            overrider = overrides           
-        }
-    }
+    // Merges all the newPalettes in one palette with the mode 
+    // It always has the mode thanks to newPaletteToThemeOptions
+    const themeOptionsWithPalette = newPaletteToThemeOptions(
+        mode, deepmergeNewPalettes(newPalettes), lightShade, darkShade
+    )
 
-    overrider = deepmerge(overrider, fillMode)
+    // Creates a final overrider with the theme options and the new palette overrided
+    // (Colors from palette had priority of palette from overrides)
+    const overrider = deepmerge(themeOptionsOverrided, themeOptionsWithPalette)
+
     return createTheme(overrider)
 }

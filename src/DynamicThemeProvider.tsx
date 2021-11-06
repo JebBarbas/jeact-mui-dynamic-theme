@@ -12,7 +12,6 @@ import createOverridedTheme from './utils/createOverridedTheme'
 import type { ColorScheme, DynamicThemeProviderProps } from './types'
 import type { PaletteMode } from '@mui/material'
 
-
 // Context Creation
 export const contextDefaultValue = {
     appColorScheme: 'default' as ColorScheme,
@@ -47,7 +46,9 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
     const theme = createOverridedTheme(
         convertColorSchemeToPaletteMode(appColorScheme),
         props.overrides,
-        /*props.customColors*/
+        props.newPalettes,
+        props.lightShade,
+        props.darkShade
     )
 
     const setDefault = () => setAppColorScheme('default')

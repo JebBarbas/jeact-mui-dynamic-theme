@@ -1,10 +1,6 @@
 import DynamicThemeProvider from "./DynamicThemeProvider";
 import useDynamicTheme from "./useDynamicTheme";
-import createOverridedTheme from './utils/createOverridedTheme';
-import createPaletteOverride from "./utils/createPaletteOverride";
-//import createCustomPalette from "./utils/createCustomPalette";
-import { bootstrapOverride, muiDarkmodeOverride, muiLightmodeOverride } from './overrides';
-export { DynamicThemeProvider, useDynamicTheme, createOverridedTheme, createPaletteOverride, 
-/*createCustomPalette,*/
-bootstrapOverride, muiDarkmodeOverride, muiLightmodeOverride, };
+import { createOverridedTheme, deepmergeNewPalettes, deepmergeOverrides, extractColorFromMUIColorObject, newPaletteToThemeOptions, } from './utils';
+import { bootstrapPalette, } from './palettes';
+export { DynamicThemeProvider, useDynamicTheme, createOverridedTheme, deepmergeNewPalettes, deepmergeOverrides, extractColorFromMUIColorObject, newPaletteToThemeOptions, bootstrapPalette, };
 //# sourceMappingURL=index.js.map

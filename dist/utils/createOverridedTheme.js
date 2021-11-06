@@ -1,23 +1,17 @@
-//import type { CustomColorsOptions } from '../types'
 import { createTheme } from '@mui/material';
 import { deepmerge } from '@mui/utils';
-//import createCustomPalette from './createCustomPalette'
-//import base from '../customColors/base'
-export default function createOverridedTheme(mode, overrides) {
-    var overrider = {};
-    //const customPalette = createCustomPalette(deepmerge(base, customColors))
-    var fillMode = { palette: { mode: mode, /*...customPalette*/ } };
-    if (overrides) {
-        if (Array.isArray(overrides)) {
-            overrides.forEach(function (override) {
-                overrider = deepmerge(overrider, override);
-            });
-        }
-        else {
-            overrider = overrides;
-        }
-    }
-    overrider = deepmerge(overrider, fillMode);
+import deepmergeOverrides from './deepmergeOverrides';
+import deepmergeNewPalettes from './deepmergeNewPalettes';
+import newPaletteToThemeOptions from './newPaletteToThemeOptions';
+export default function createOverridedTheme(mode, overrides, newPalettes, lightShade, darkShade) {
+    // Merges all the overrides in one, that makes the overrider
+    var themeOptionsOverrided = deepmergeOverrides(overrides);
+    // Merges all the newPalettes in one palette with the mode 
+    // It always has the mode thanks to newPaletteToThemeOptions
+    var themeOptionsWithPalette = newPaletteToThemeOptions(mode, deepmergeNewPalettes(newPalettes), lightShade, darkShade);
+    // Creates a final overrider with the theme options and the new palette overrided
+    // (Colors from palette had priority of palette from overrides)
+    var overrider = deepmerge(themeOptionsOverrided, themeOptionsWithPalette);
     return createTheme(overrider);
 }
 //# sourceMappingURL=createOverridedTheme.js.map

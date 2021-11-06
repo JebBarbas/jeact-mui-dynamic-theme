@@ -68,32 +68,76 @@ it uses the light theme.
 
 ## Overriding Theme
 
+WARNING: In previous versions, overrides prop were to override the colors, but now, to try follow material ui
+rules, there are some changes, and, if you want to change the primary, secondary, success... etc. colors, you must
+use the newPalettes prop. You can see it below.
+
 If you want to change something from the original palette, you can use the `overrides` property, it accepts an object
-of type MUI `ThemeOptions` (or an array of them). mui-dynamic-theme has its own overrides, like `bootstrapOverride`
-(the colors of bootstrap), so, if you want, for instance, to use the colors of bootstrap, and make the `primary`
-color '#cc0000', you can make it like this:
+of type MUI `ThemeOptions` (or an array of them). (Consider that if you want to change the colors, you must use
+property newPalettes).
 
 ```jsx
-import { DynamicThemeProvider, bootstrapOverrider, createPaletteOverride } from '@jeact/mui-dynamic-theme'
+import { DynamicThemeProvider } from '@jeact/mui-dynamic-theme'
+
 // TODO: Create some screen that uses MUI components
 import Screen from './Screen'
 
+// TODO: If you want to override something, like the Typography, breakpoints, etc, this goes here
+const typographyOverrider = {...}
+const breakpointsOverrider = {...}
+
 const App = () => {
     return (
-        <DynamicThemeProvider overrides={[bootstrapOverrider, createPaletteOverride('#cc0000')]}>
+        <DynamicThemeProvider overrides={[typographyOverrider, breakpointsOverrider]}>
             <Screen>
         </DynamicThemeProvider>
     )
 }
 ```
 
-***About `createPaletteOverride`***: It creates an `ThemeOptions` with only a palette, it has 6 optional
-parameters that are the colors you want to override, in the next order: primary, secondary, success, warning, error
-and info.
+## Changing Palette Colors
 
-The available overrides are: 
-- `bootstrapOverride`: Overrides MUI main colors with the bootstrap ones (for example, the MUI secondary color is a 
-purple, with this, the new secondary color will be the Bootstrap one).
-- `muiLightmodeOverride`: Normally when you toggle from lightmode to darkmode, the colors change, so, if you don't 
-want that to happen, use this override to have always the lightmode colors.
-- `muiDarkmodeOverride`: Use this override to have always the darkmode colors.
+In versions 2.0 and upper, there is an easier way to change the palette colors (and even this ones change
+when the darkmode is active), now you can only change the color with one of the built-in MUI colors, of the
+MaterialUI colors from `@jeact/colors`, to make this, import the color object of your preference and put it
+in the newPalettes property.
+
+```jsx
+import { DynamicThemeProvider } from '@jeact/mui-dynamic-theme'
+import { red, purple } from '@mui/material/colors'
+import { MaterialUI } from '@jeact/colors'
+
+// TODO: Create some screen that uses MUI components
+import Screen from './Screen'
+
+const App = () => {
+    return (
+        <DynamicThemeProvider newPalettes={{primary: red, secondary: purple, success: MaterialUI.blue}}>
+            <Screen>
+        </DynamicThemeProvider>
+    )
+}
+```
+
+As the same case as overrides, `newPalettes` also accepts an array, this is awesome because, for example, if
+you want to use the `bootstrapPalette` (gray to secondary and yellow to warning), and you also want the
+color `pink` to be your primary, you can but this two in an array.
+
+```jsx
+import { DynamicThemeProvider, bootstrapPalette } from '@jeact/mui-dynamic-theme'
+import { pink } from '@mui/material/colors'
+
+// TODO: Create some screen that uses MUI components
+import Screen from './Screen'
+
+const App = () => {
+    return (
+        <DynamicThemeProvider newPalettes={[bootstrapPalette, {primary: pink} ]}>
+            <Screen>
+        </DynamicThemeProvider>
+    )
+}
+```
+
+***NOTE: Be aware of put the bootstrapPalette first, otherwise, the bootstrap primary color will override
+your pink primary color.***
