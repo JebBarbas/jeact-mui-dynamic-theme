@@ -1,5 +1,4 @@
 import React from 'react';
-import './DynamicThemeProvider.css';
 import type { ColorScheme, DynamicThemeProviderProps } from './types';
 export declare const contextDefaultValue: {
     appColorScheme: ColorScheme;

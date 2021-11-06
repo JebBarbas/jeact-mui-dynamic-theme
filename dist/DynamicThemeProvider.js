@@ -1,9 +1,12 @@
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
 import React from 'react';
 import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
+import styled from 'styled-components';
 import { useLocalStorage } from '@jeact/hooks'; // Very useful hook :)
 import createOverridedTheme from './utils/createOverridedTheme';
-// Import CSS to change the Selection color
-import './DynamicThemeProvider.css';
 // Context Creation
 export var contextDefaultValue = {
     appColorScheme: 'default',
@@ -13,6 +16,9 @@ export var contextDefaultValue = {
     setLight: function () { 0; }
 };
 export var DynamicThemeContext = React.createContext(contextDefaultValue);
+var DynamicSelectionDiv = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    & ::selection {\n        background: var(--jmdt-bg);\n        color: var(--jmdt-fg)\n    }\n"], ["\n    & ::selection {\n        background: var(--jmdt-bg);\n        color: var(--jmdt-fg)\n    }\n"
+    // Provider
+])));
 // Provider
 var DynamicThemeProvider = function (props) {
     var _a;
@@ -44,7 +50,8 @@ var DynamicThemeProvider = function (props) {
     return (React.createElement(DynamicThemeContext.Provider, { value: value },
         React.createElement(ThemeProvider, { theme: theme },
             React.createElement(CssBaseline, null),
-            props.children)));
+            React.createElement(DynamicSelectionDiv, null, props.children))));
 };
 export default DynamicThemeProvider;
+var templateObject_1;
 //# sourceMappingURL=DynamicThemeProvider.js.map

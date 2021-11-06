@@ -4,12 +4,10 @@ import {
     ThemeProvider, 
     useMediaQuery 
 } from '@mui/material'
+import styled from 'styled-components'
 
 import { useLocalStorage } from '@jeact/hooks' // Very useful hook :)
 import createOverridedTheme from './utils/createOverridedTheme'
-
-// Import CSS to change the Selection color
-import './DynamicThemeProvider.css'
 
 // Types
 import type { ColorScheme, DynamicThemeProviderProps } from './types'
@@ -24,6 +22,13 @@ export const contextDefaultValue = {
     setLight: () => {0}
 }
 export const DynamicThemeContext = React.createContext(contextDefaultValue)
+
+const DynamicSelectionDiv = styled.div`
+    & ::selection {
+        background: var(--jmdt-bg);
+        color: var(--jmdt-fg)
+    }
+`
 
 // Provider
 const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
@@ -73,7 +78,9 @@ const DynamicThemeProvider:React.FC<DynamicThemeProviderProps> = (props) => {
         <DynamicThemeContext.Provider value={value}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                {props.children}
+                <DynamicSelectionDiv>
+                    {props.children}
+                </DynamicSelectionDiv>
             </ThemeProvider>
         </DynamicThemeContext.Provider>
     )
